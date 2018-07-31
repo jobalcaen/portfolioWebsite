@@ -1,37 +1,34 @@
-var React = require('react');
+import React from 'react';
 
-class Sidebar extends React.Component {
+export default class Sidebar extends React.Component {
+
 	render() {
+		console.log("content props",this.props);
+
+		const buttons = this.props.pages.map((button) => {
+
+			return (<span
+				className='nav-button'
+				id={button}
+				key={button}
+				onClick={() => this.props.changePage(button)}
+				onMouseEnter={() => this.props.setHoveredButton(button)}
+				onMouseLeave={() => this.props.setHoveredButton(null)}
+			>
+				{this.props.hoveredButton === button ? button : <img src={`./app/images/${button}.svg`} />}
+		    </span>)
+		});
+			
 		return (
 			<div>
 				<span>
-	    			<img className="headshot" src="headshot.jpg" />
+	    			<img className='headshot' src='./app/images/headshot.jpg' />
 	    		</span>
 
-	    		<div className="nav-container">
-	    			<span className="nav-button" id="home">
-		    			<img src="svg_icons/home.svg" />
-		    		</span>
-		    		
-		    		<span className="nav-button" id="about">
-		    			<img src="svg_icons/about.svg" />
-		    		</span>
-
-		    		<span className="nav-button" id="skills">
-		    			<img src="svg_icons/skills.svg" />
-		    		</span>
-
-		    		<span className="nav-button" id="works">
-		    			<img src="svg_icons/works.svg" />
-		    		</span>
-
-		    		<span className="nav-button" id="contact">
-		    			<img src="svg_icons/contact.svg" />
-		    		</span>
+	    		<div className='nav-container'>
+	    			{buttons}
 		    	</div>
 		    </div>
 		)
 	}
 }
-
-module.exports = Sidebar;
