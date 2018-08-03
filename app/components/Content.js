@@ -9,15 +9,15 @@ export default class Content extends React.Component {
 	componentToReturn(page) {
 		switch (page) {
 			case "home":
-				return <Home />
+				return <Home englishView={this.props.englishView}/>
 			case "about":
-				return <About />
+				return <About englishView={this.props.englishView} />
 			case "contact":
-				return <Contact />
+				return <Contact englishView={this.props.englishView} />
 			case "skills":
-				return <Skills />
+				return <Skills englishView={this.props.englishView} />
 			default:
-				return <Home />
+				return <Home englishView={this.props.englishView} />
 		}
 	} 
 	render() {
