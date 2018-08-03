@@ -2,6 +2,8 @@ import React from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Skills from './pages/Skills';
+
 
 export default class Content extends React.Component {
 	componentToReturn(page) {
@@ -12,14 +14,17 @@ export default class Content extends React.Component {
 				return <About />
 			case "contact":
 				return <Contact />
+			case "skills":
+				return <Skills />
 			default:
 				return <Home />
 		}
 	} 
-
 	render() {
 		return (
-			<div>
+
+			<div id="main" className="main-content">
+
 				{this.componentToReturn(this.props.selectedPage)}
 			</div>
 		)

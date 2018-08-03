@@ -5,6 +5,8 @@ export default class About extends React.Component {
 		return (
 			<div>
 				<h1>About</h1>
+				<img src='./app/images/headshot.jpg' className="big-headshot"/>
+
 			</div>
 		)
 	}

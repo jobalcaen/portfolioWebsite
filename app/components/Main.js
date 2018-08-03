@@ -8,43 +8,46 @@ export default class Main extends React.Component {
 		this.state = {
 			selectedPage: 'home',
 			pages: ['home','about','skills','contact'],
-			hoveredButton: null
+			hoveredButton: null,
+			englishView: true
 		};
 		this.changePage = this.changePage.bind(this);
 		this.setHoveredButton = this.setHoveredButton.bind(this);
 	}
 
 	changePage(page) {
-		console.log("change to ", page);
 		let newState = {...this.state, selectedPage: page};
-		console.log("newState: ", newState);
-		this.setState({newState});
+		this.setState({...newState});
 	};
 
 	setHoveredButton(button) {
-		console.log(button, "hovered");
 		let newState = {...this.state, hoveredButton: button};
-		this.setState({newState});
+		this.setState({...newState});
+	}
+
+	toggleLanguage() {
+		console.log("togglelanguage newState: ", newState);
+		console.log("englishView: ", this.state);
+
+		let newState = {...this.state, englishView: !this.state.englishView};
+		this.setState({...newState});
 	}
 
 	render() {
 		return (
-			<div>
-				<div id="sidebar" className="side-bar">
-					<Sidebar
-						changePage={this.changePage}
-						setHoveredButton={this.setHoveredButton}
-						hoveredButton={this.state.hoveredButton}
-						selectedPage={this.state.selectedPage}
-						pages={this.state.pages}
-					/>
-				</div>
+			<div className="grid-container">
+				<Sidebar
+					changePage={this.changePage}
+					setHoveredButton={this.setHoveredButton}
+					hoveredButton={this.state.hoveredButton}
+					selectedPage={this.state.selectedPage}
+					toggleLanguage={this.toggleLanguage}
+					pages={this.state.pages}
+				/>
 
-				<div id="main" className="main-content">
-					<Content
-						selectedPage={this.state.selectedPage}
-					/>
-				</div>
+				<Content
+					selectedPage={this.state.selectedPage}
+				/>
 			</div>
 		)
 	}	

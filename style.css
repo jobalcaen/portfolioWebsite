@@ -4,28 +4,45 @@
 #e7dfdd*/
 
 :root {
-  --side-bar-bg-color: #0e0b16;
+  --side-bar-bg-color: #181818;
   --main-conent-bg-color: #292929;
-  --nav-item-color: #4717f6;
+  --nav-item-color: #08fdd8;
+  --header-color: #08fdd8;
+  --subheader-color: #ff00ec;
+  --text-color: #cecece;
 }
 
 
 body {
 	margin: 0px;
+  	font-family: 'Ubuntu Condensed', sans-serif;
+
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 25vw auto;
+}
+
+a {
+	color: inherit;
 }
 
 .side-bar {
-	width: 65px;
-	height: 100%;
+	height: 100vh;
 	background-color: var(--side-bar-bg-color);
-	position: fixed;
+	position: sticky;
+	top: 0;
+ 	
 }
 
 .nav-container {
-	height: calc(100vh - 65px);
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+    align-items: center;
+
 }
 
 .nav-button {
@@ -34,11 +51,9 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     color: var(--nav-item-color);
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .nav-button > img {
@@ -52,13 +67,77 @@ body {
 }
 
 .main-content {
-	padding-left: 140px;
-	padding-top: 50px;
-	padding-bottom: 50px;
 	background-color: var(--main-conent-bg-color);
-	height: 100vh;
 }
 
 .headshot {
 	width: 100%;
+	height: 35px;
+	margin-top: 10px;
+	margin-bottom: auto;
+}
+
+
+.headshot > img {
+	border-radius: 50%;
+	width: 50%;
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.big-headshot {
+	border-radius: 50%;
+	width: 50%;
+	opacity: 0.8;
+
+}
+
+h1 {
+	color: var(--header-color);
+}
+
+h2 {
+	color: var(--subheader-color);
+}
+
+.text {
+	color: var(--text-color);
+}
+
+input, textarea {
+	border-radius: 2px;
+	border: 0px;
+	width: 300px;
+	height: 50px;
+	background: silver;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.contact-list {
+	color: var(--text-color);
+}
+
+.contact-list > dt {
+	display: block;
+    float: left;
+    clear: both;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.contact-list > dd {
+	display: block;
+    float: left;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+i {
+	padding-right: 5px;
+}
+ 	
+.language-toggle {
+	margin-top: auto;
 }
