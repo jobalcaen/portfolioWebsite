@@ -1,6 +1,6 @@
 import React from 'react';
 import Content from './Content';
-import Sidebar from './Sidebar';
+import Controlbar from './Controlbar';
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -9,11 +9,13 @@ export default class Main extends React.Component {
 			selectedPage: 'home',
 			pages: ['home','skills','contact'],
 			hoveredButton: null,
-			englishView: true
+			englishView: true,
+			mobileView: window.innerWidth <= 600
 		};
 		this.changePage = this.changePage.bind(this);
 		this.setHoveredButton = this.setHoveredButton.bind(this);
 		this.toggleLanguage = this.toggleLanguage.bind(this);
+		this.resize = this.resize.bind(this);
 	}
 
 	changePage(page) {
@@ -36,10 +38,23 @@ export default class Main extends React.Component {
 		this.setState({...newState});
 	}
 
+	resize() {
+		let newState = {...this.state, mobileView: window.innerWidth <= 600};
+    	this.setState({...newState});
+	}
+
+	componentDidMount() {
+    	window.addEventListener("resize", this.resize);
+	}
+
+	componentWillUnmount() {
+    	window.removeEventListener("resize", this.resize);
+  	}
+
 	render() {
 		return (
 			<div className="grid-container">
-				<Sidebar
+				<Controlbar
 					changePage={this.changePage}
 					setHoveredButton={this.setHoveredButton}
 					hoveredButton={this.state.hoveredButton}
@@ -47,6 +62,7 @@ export default class Main extends React.Component {
 					toggleLanguage={this.toggleLanguage}
 					pages={this.state.pages}
 					englishView={this.state.englishView}
+					mobileView={this.state.mobileView}
 				/>
 
 				<Content

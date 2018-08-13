@@ -1,9 +1,21 @@
 import React from 'react';
 
-export default class Sidebar extends React.Component {
+export default class Controlbar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			navBarsClicked: false
+		}
+		this.clickNavBar = this.clickNavBar.bind(this);
+	}
+
+	clickNavBar() {
+		let newState = {...this.state, navBarsClicked: !this.state.navBarsClicked};
+		this.setState({...newState});
+	}
 
 	render() {
-		console.log('sidebar props: ', this.props);
+		console.log('control props: ', this.props);
 		const buttons = this.props.pages.map((button) => {
 			return (<span
 				className='nav-button'
@@ -19,17 +31,23 @@ export default class Sidebar extends React.Component {
 		});
 		
 		return (
-			<div id="sidebar" className="side-bar">
+			<div className="controlbar">
 				<div className='headshot' >
 		    		<img src='./app/images/headshot.jpg' />
-		    		<h1 className="sidebar-name">Joel Balcaen</h1>
-		    		<h2 className="sidebar-header">Front-End Web Developer</h2>
+		    		<div>
+			    		<h1 className="controlbar-name">Joel Balcaen</h1>
+			    		<h2 className="controlbar-header">Front-End Web Developer</h2>
+			    	</div>
 		    	</div>
 				
 				<div className="nav-container">
-		    		{buttons}
-
+					{this.props.mobileView? <i onClick={() => this.clickNavBar() }className="fas fa-bars fa-3x" /> : buttons}
 				</div>
+
+				<div className='mobile-menu-area'>
+					
+				</div>
+
 				<div className='social-media-icons'>
 					<a href="https://github.com/jobalcaen">
 						<i className="fa fa-github" aria-hidden="true"></i>
@@ -41,7 +59,8 @@ export default class Sidebar extends React.Component {
 						<i className="fa fa-facebook-official" aria-hidden="true"></i>
 					</a>
 				</div>
-				<div className="sidebar-controls">
+
+				<div className="language-control">
 				   	<span className='language-toggle' onClick={() => this.props.toggleLanguage()}>
 						{this.props.englishView? 'français' : 'english'} 
 					</span>
