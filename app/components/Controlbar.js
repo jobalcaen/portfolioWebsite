@@ -4,7 +4,7 @@ export default class Controlbar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			navBarsClicked: false
+			navBarsClicked: false,
 		}
 		this.clickNavBar = this.clickNavBar.bind(this);
 	}
@@ -34,19 +34,23 @@ export default class Controlbar extends React.Component {
 			<div className="controlbar">
 				<div className='headshot' >
 		    		<img src='./app/images/headshot.jpg' />
-		    		<div>
-			    		<h1 className="controlbar-name">Joel Balcaen</h1>
-			    		<h2 className="controlbar-header">Front-End Web Developer</h2>
+		    		<div className='site-title'>
+		    			<h1 className="controlbar-name">Joel Balcaen</h1>
+			    		{
+			    			!this.props.mobileView && <h2 className="controlbar-header">Front-End Web Developer</h2>
+			    		}
 			    	</div>
 		    	</div>
 				
 				<div className="nav-container">
-					{this.props.mobileView? <i onClick={() => this.clickNavBar() }className="fas fa-bars fa-3x" /> : buttons}
+					{this.props.mobileView? <i onClick={() => this.clickNavBar() }className="fas fa-bars fa-2x" /> : buttons}
 				</div>
-
-				<div className='mobile-menu-area'>
-					
-				</div>
+					{	
+						this.state.navBarsClicked ? <div className='mobile-menu-area clicked'>{buttons}				   	<span className='language-toggle' onClick={() => this.props.toggleLanguage()}>
+						{this.props.englishView? 'français' : 'english'} 
+					</span></div> :
+							<div className='mobile-menu-area'></div>
+					}
 
 				<div className='social-media-icons'>
 					<a href="https://github.com/jobalcaen">
