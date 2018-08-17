@@ -9,7 +9,7 @@
   --nav-item-color: #cecece;
   --header-color: #08fdd8;
   --subheader-color: #ff00ec;
-  --text-color: #cecece;
+  --text-color: #333333;
 }
 
 
@@ -21,7 +21,7 @@ body {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 25vw auto;
+	grid-template-columns: 20vw auto;
 }
 
 a {
@@ -29,6 +29,7 @@ a {
 }
 
 .controlbar {
+	height: 100vh;
 	background-color: var(--side-bar-bg-color);
 	position: sticky;
 	top: 0;
@@ -40,8 +41,8 @@ a {
 .nav-container {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
     align-items: center;
-    padding-top: 2em;
 }
 
 .nav-button {
@@ -51,6 +52,57 @@ a {
     text-align: center;
     color: var(--nav-item-color);
     font-size: 1em;
+}
+
+/*.nav-button:hover {
+	color: blue;
+}*/
+
+
+.nav-button:hover::after {
+	content: " >";
+}
+
+.logo {
+	height: 50px;
+	padding-bottom: 0.6em;
+}
+
+.workplace {
+	margin-left: 2em;
+}
+
+.workplace-header {
+	display: flex;
+	margin-bottom: 1em;
+}
+
+.workplace-name {
+	margin: 0;
+}
+
+.skills {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.skills > span {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 1em;
+}
+
+
+.date-range {
+	margin-left: auto;
+	display: flex;
+    align-items: center;
+}
+
+.workplace_name {
+	margin: 0;
 }
 
 .main-content {
@@ -67,7 +119,7 @@ a {
 
 .headshot > img {
 	border-radius: 50%;
-	width: 50%;
+	width: 60%;
 	margin-left: auto;
     margin-right: auto;
     display: block;
@@ -132,6 +184,7 @@ i {
 .social-media-icons {
 	display: flex;
     justify-content: center;
+    align-items: flex-end;
     color: var(--nav-item-color);
 }
 
@@ -145,14 +198,17 @@ i {
 }
 
 .section-container {
-	background-color:  #111111b5;
-	opacity: 0.95;
+	background-color:  #eeeeee;
 	border: 3px double black;
-    margin: 4em;
-    padding: 3em;
+    margin: 2em;
+    padding: 2em;
     width: 100%;
 }
 
+.page-header {
+	text-align: center;
+	font-size: 3em;
+}
 /*Smart Phones Portrait*/
 @media only screen and (max-width:600px) {
 	.grid-container {
@@ -168,6 +224,7 @@ i {
 		display: grid;
 	    grid-template-columns: 80vw 20vw;
 	    grid-template-rows: unset;
+	    height: unset;
 	}
 
 	.headshot {
@@ -177,6 +234,7 @@ i {
 	}
 
 	.headshot > img {
+
 		height: 15vh;
 	}
 
@@ -218,6 +276,7 @@ i {
 	    height: unset;
 	    margin-bottom: unset;
 	    text-align: unset;
+	    -webkit-transition:color 1s ease-in;
 	}
 
 	.headshot > img {
@@ -226,6 +285,7 @@ i {
 		margin:	unset;
 		padding-left: 0.5em;
     	padding-right: 0.5em;
+
 	}
 
 	.headshot {

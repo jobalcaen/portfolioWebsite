@@ -66,7 +66,7 @@ export default class Controlbar extends React.Component {
 
 				<div className="language-control">
 				   	<span className='language-toggle' onClick={() => this.props.toggleLanguage()}>
-						{this.props.englishView? 'français' : 'english'} 
+						{this.props.englishView? 'FRANÇAIS' : 'ENGLISH'} 
 					</span>
 				</div>
 
