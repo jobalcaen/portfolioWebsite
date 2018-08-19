@@ -1,4 +1,8 @@
 import React from 'react';
+import SocialButtons from './SocialButtons';
+import LanguageControl from './LanguageControl';
+import Headshot from './Headshot';
+import NavButtons from './NavButtons';
 
 export default class Controlbar extends React.Component {
 	constructor(props) {
@@ -10,65 +14,44 @@ export default class Controlbar extends React.Component {
 	}
 
 	clickNavBar() {
+		console.log('clicked');
 		let newState = {...this.state, navBarsClicked: !this.state.navBarsClicked};
 		this.setState({...newState});
 	}
 
 	render() {
 		console.log('control props: ', this.props);
-		const buttons = this.props.pages.map((button) => {
-			return (<span
-				className='nav-button'
-				id={button}
-				key={button}
-				onClick={() => this.props.changePage(button)}
-				onMouseEnter={() => this.props.setHoveredButton(button)}
-				onMouseLeave={() => this.props.setHoveredButton(null)}
-			> {button}
-				{/*(this.props.hoveredButton === button || this.props.selectedPage === button)? button : <img src={`./app/images/${button}.svg`} />*/}
-			
-		    </span>)
-		});
-		
+
 		return (
 			<div className="controlbar">
-				<div className='headshot' >
-		    		<img src='./app/images/headshot.jpg' />
-		    		<div className='site-title'>
-		    			<h1 className="controlbar-name">Joel Balcaen</h1>
-			    		{
-			    			!this.props.mobileView && <h2 className="controlbar-header">Front-End Web Developer</h2>
-			    		}
-			    	</div>
-		    	</div>
+		    	<Headshot 
+		    		mobileView={this.props.mobileView}
+		    	/>
 				
-				<div className="nav-container">
-					{this.props.mobileView? <i onClick={() => this.clickNavBar() }className="fas fa-bars fa-2x" /> : buttons}
-				</div>
-					{	
-						this.state.navBarsClicked ? <div className='mobile-menu-area clicked'>{buttons}				   	<span className='language-toggle' onClick={() => this.props.toggleLanguage()}>
-						{this.props.englishView? 'français' : 'english'} 
-					</span></div> :
-							<div className='mobile-menu-area'></div>
+					{
+						this.props.mobileView && <div className='nav-expander'>
+							<i onClick={() => this.clickNavBar() }className="fas fa-bars fa-2x" />
+						</div>
 					}
 
-				<div className='social-media-icons'>
-					<a href="https://github.com/jobalcaen">
-						<i className="fa fa-github" aria-hidden="true"></i>
-					</a>
-					<a href="https://www.linkedin.com/in/joel-balcaen-9418b263/">
-						<i className="fa fa-linkedin" aria-hidden="true"></i>
-					</a>
-					<a href="https://www.facebook.com/jobalcaen">
-						<i className="fa fa-facebook-official" aria-hidden="true"></i>
-					</a>
-				</div>
+				<NavButtons 
+					pages={this.props.pages}
+					mobileView={this.props.mobileView}
+		    		selectedPage={this.props.selectedPage}
+		    		changePage={this.props.changePage}
+		    		setHoveredButton={this.props.setHoveredButton}
+		    		navBarsClicked={this.state.navBarsClicked}
+				/>
 
-				<div className="language-control">
-				   	<span className='language-toggle' onClick={() => this.props.toggleLanguage()}>
-						{this.props.englishView? 'FRANÇAIS' : 'ENGLISH'} 
-					</span>
-				</div>
+				
+				{ !this.props.mobileView && <SocialButtons /> }
+
+				{ 
+					!this.props.mobileView && <LanguageControl
+						toggleLanguage={this.props.toggleLanguage}
+						englishView={this.props.englishView}
+					/>
+				}
 
 		    </div>
 		)

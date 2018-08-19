@@ -1,6 +1,8 @@
 import React from 'react';
 import Content from './Content';
 import Controlbar from './Controlbar';
+import NavButtons from './NavButtons';
+
 
 export default class Main extends React.Component {
 	constructor(props) {

@@ -5,7 +5,7 @@ export default class Home extends React.Component {
 		return (
 
 			<div className='section-container'>
-				<h1>{this.props.englishView ? 'Hello, I\'m Joël' : 'Bonjour'}</h1>
+				<h1 className='greeting'>{this.props.englishView ? 'Hello, I\'m Joël' : 'Bonjour'}</h1>
 				<h2>
 					I am a web developer specialising in front end development.
 				</h2>

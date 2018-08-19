@@ -10,7 +10,7 @@ export default class Skills extends React.Component {
 				<section className='workplace'>
 					<div className='workplace-header'>
 						<h2 className='workplace-name'>Voltage Technology</h2>
-						<span className='date-range'>Nov 2016 – Jun 2017</span>
+						<span className='date-range'>...:: Nov 2016 – Jun 2017</span>
 					</div>
 					<h3>Frontend Web Developer</h3>
 					<ul>
@@ -23,7 +23,7 @@ export default class Skills extends React.Component {
 				<section className='workplace'>
 					<div className='workplace-header'>
 						<h2 className='workplace-name'>Studios Framestore</h2>
-						<span className='date-range'>Dec 2014 – Nov 2016  </span>
+						<span className='date-range'>...:: Dec 2014 – Nov 2016  </span>
 					</div>
 					<h3>Junior System Administrator</h3>
 					<ul>
