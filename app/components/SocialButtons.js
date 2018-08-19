@@ -1,0 +1,20 @@
+import React from 'react';
+
+
+const SocialButtons = () => {
+	return (
+	  	<div className='social-media-icons'>
+			<a href="https://github.com/jobalcaen">
+				<i className="fa fa-github" aria-hidden="true"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/joel-balcaen-9418b263/">
+				<i className="fa fa-linkedin" aria-hidden="true"></i>
+			</a>
+			<a href="https://www.facebook.com/jobalcaen">
+				<i className="fa fa-facebook-official" aria-hidden="true"></i>
+			</a>
+		</div>
+	)
+}
+
+export default SocialButtons;
