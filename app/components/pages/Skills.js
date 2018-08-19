@@ -7,7 +7,6 @@ import git_logo from '../../images/git.svg';
 import ubuntu_logo from '../../images/ubuntu.svg';
 
 
-
 export default class Skills extends React.Component {
 	render() {
 		return (
