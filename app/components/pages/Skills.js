@@ -1,4 +1,12 @@
 import React from 'react';
+import js_logo from '../../images/javascript.svg';
+import react_logo from '../../images/react.svg';
+import redux_logo from '../../images/redux.svg';
+import node_logo from '../../images/nodejs.svg';
+import git_logo from '../../images/git.svg';
+import ubuntu_logo from '../../images/ubuntu.svg';
+
+
 
 export default class Skills extends React.Component {
 	render() {
@@ -38,36 +46,36 @@ export default class Skills extends React.Component {
 				
 				<section className='skills'>
 					<span>
-						<object type="image/svg+xml" data="./app/images/javascript.svg" className="logo">
+						<object type="image/svg+xml" data={js_logo} className="logo">
 						</object>Javascript ES6
 					</span>
 
 					<span>
-						<object type="image/svg+xml" data="./app/images/react.svg" className="logo">
+						<object type="image/svg+xml" data={react_logo} className="logo">
 						</object>
 						React
 					</span>
 
 					<span>
-						<object type="image/svg+xml" data="./app/images/redux.svg" className="logo">
+						<object type="image/svg+xml" data={redux_logo} className="logo">
 						</object>
 						Redux
 					</span>
 
 					<span>
-						<object type="image/svg+xml" data="./app/images/nodejs.svg" className="logo">
+						<object type="image/svg+xml" data={node_logo} className="logo">
 						</object>
 						Nodejs
 					</span>
 
 					<span>
-						<object type="image/svg+xml" data="./app/images/git.svg" className="logo">
+						<object type="image/svg+xml" data={git_logo} className="logo">
 						</object>
 						Git
 					</span>
 
 					<span>
-						<object type="image/svg+xml" data="./app/images/ubuntu.svg" className="logo">
+						<object type="image/svg+xml" data={ubuntu_logo} className="logo">
 						</object>
 						Ubuntu
 					</span>
