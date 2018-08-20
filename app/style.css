@@ -40,16 +40,19 @@ a {
 	height: 100vh;
 	background-color: var(--control-bar-bg-color);
 	position: sticky;
-	top: 0;
-	display: grid;
  	z-index: 1;
+ 	display: grid;
+    grid-template-rows: 40vh 46vh 7vh 7vh;;
+
 }
 
 .nav-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: center;
+    color: var(--nav-item-color);
+    flex-direction: column;
 }
 
 .nav-button {
@@ -125,7 +128,7 @@ a {
 }
 
 .headshot {
-	padding: 1em;
+	padding-top: 0.8em;
 }
 
 
@@ -147,6 +150,7 @@ h2 {
 
 .text {
 	color: var(--text-color);
+	text-align: justify;
 }
 
 .contact-list {
@@ -175,12 +179,12 @@ i {
 .controlbar-name {
 	text-align: center;
 	color: white;
-	font-size: 1.5em;
+	font-size: 1.4em;
 }
 
 .controlbar-header {
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 1.1em;
 
 }
 
@@ -199,9 +203,10 @@ i {
 }
 
 .social-media-icons {
-	display: flex;
+    display: flex;
+    align-items: center;
+    width: 100%;
     justify-content: center;
-    align-items: flex-end;
     color: var(--nav-item-color);
 }
 
@@ -234,8 +239,12 @@ i {
 .greeting {
 	font-size: 4em;
 }
+
+.nav-expander {
+	display: none;
+}
 /*Smart Phones Portrait*/
-@media only screen and (max-width:600px) {
+@media (min-width: 320px) and (max-width: 480px) {
 	.grid-container {
 		display: grid;
 		grid-template-rows: 20vh 80vh;
@@ -360,6 +369,8 @@ i {
 	    margin: unset;
 	    padding: unset;
 	    border:	unset;
+	    padding-left: 1em;
+	    padding-right: 1em; 	
 	}
 
 	.nav-expander {

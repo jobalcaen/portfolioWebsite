@@ -28,12 +28,10 @@ export default class Controlbar extends React.Component {
 		    		mobileView={this.props.mobileView}
 		    	/>
 				
-					{
-						this.props.mobileView && <div className='nav-expander'>
-							<i onClick={() => this.clickNavBar() }className="fas fa-bars fa-2x" />
-						</div>
-					}
-
+				<div className='nav-expander'>
+						<i onClick={() => this.clickNavBar() }className="fas fa-bars fa-2x" />
+				</div>
+					
 				<NavButtons 
 					pages={this.props.pages}
 					mobileView={this.props.mobileView}
@@ -43,15 +41,13 @@ export default class Controlbar extends React.Component {
 		    		navBarsClicked={this.state.navBarsClicked}
 				/>
 
-				
-				{ !this.props.mobileView && <SocialButtons /> }
+				<SocialButtons />
 
-				{ 
-					!this.props.mobileView && <LanguageControl
-						toggleLanguage={this.props.toggleLanguage}
-						englishView={this.props.englishView}
-					/>
-				}
+				<LanguageControl
+					toggleLanguage={this.props.toggleLanguage}
+					englishView={this.props.englishView}
+				/>
+				
 
 		    </div>
 		)

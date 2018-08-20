@@ -3,9 +3,11 @@ import React from 'react';
 
 const LanguageControl = (props) => {
 	return (
-		<span className='language-control' onClick={() => props.toggleLanguage()}>
-			{props.englishView? 'FRANÇAIS' : 'ENGLISH'} 
-		</span>
+		<div className='language-control'>
+			<span onClick={() => props.toggleLanguage()}>
+				{props.englishView? 'FRANÇAIS' : 'ENGLISH'} 
+			</span>
+		</div>
 	)
 }
 

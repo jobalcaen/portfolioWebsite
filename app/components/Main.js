@@ -12,7 +12,7 @@ export default class Main extends React.Component {
 			pages: ['home','skills','contact'],
 			hoveredButton: null,
 			englishView: true,
-			mobileView: window.innerWidth <= 600
+			mobileView: window.innerWidth >= 320 && window.innerWidth <= 480
 		};
 		this.changePage = this.changePage.bind(this);
 		this.setHoveredButton = this.setHoveredButton.bind(this);
