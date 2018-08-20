@@ -28,7 +28,7 @@ export default class Controlbar extends React.Component {
 		    		mobileView={this.props.mobileView}
 		    	/>
 				
-				<div className='nav-expander'>
+				<div className={this.state.navBarsClicked ? 'nav-expander clicked' : 'nav-expander'}>
 						<i onClick={() => this.clickNavBar() }className="fas fa-bars fa-2x" />
 				</div>
 					
@@ -42,12 +42,7 @@ export default class Controlbar extends React.Component {
 				/>
 
 				<SocialButtons />
-
-				<LanguageControl
-					toggleLanguage={this.props.toggleLanguage}
-					englishView={this.props.englishView}
-				/>
-				
+		
 
 		    </div>
 		)

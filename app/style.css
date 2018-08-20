@@ -42,7 +42,7 @@ a {
 	position: sticky;
  	z-index: 1;
  	display: grid;
-    grid-template-rows: 40vh 46vh 7vh 7vh;;
+    grid-template-rows: 40vh 50vh 10vh;
 
 }
 
@@ -272,7 +272,9 @@ i {
 	}
 
 	.main-content {
-		margin-top: 3em;
+		padding-top: 3em;
+		overflow-x: hidden;
+    	overflow-y: scroll;
 	}
 
 	.social-media-icons {
@@ -318,9 +320,6 @@ i {
     	padding-bottom: 0.5em;
 	}
 
-	.clicked {
-/*		background-color: inherit;
-*/	}
 
 	.nav-button {
 		margin-right: unset;
@@ -370,7 +369,8 @@ i {
 	    padding: unset;
 	    border:	unset;
 	    padding-left: 1em;
-	    padding-right: 1em; 	
+	    padding-right: 1em;
+	    padding-bottom: 1em;
 	}
 
 	.nav-expander {
@@ -379,5 +379,10 @@ i {
     	justify-content: center;
     	color: var(--nav-item-color);
 	}
+
+	.clicked {
+	    color: var(--header-color);
+	}
+
 
 }
