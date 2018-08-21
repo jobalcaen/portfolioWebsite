@@ -1,16 +1,19 @@
-var HTMLWebpackPlugin = require(
+let HTMLWebpackPlugin = require(
 	'html-webpack-plugin'
 );
 
-var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+let HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 	template: __dirname + '/app/index.html',
 	filename: 'index.html',
 	inject: 'body'
 });
 
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
+
 module.exports = {
 	entry: __dirname + '/app/index.js',
-	mode: 'development',
+	mode: 'production',
 	module: {
 		rules: [
 			{
@@ -38,5 +41,12 @@ module.exports = {
 		filename: 'transformed.js',
 		path: __dirname + '/build'
 	},
-	plugins: [HTMLWebpackPluginConfig]
+	plugins: [
+		HTMLWebpackPluginConfig,
+		new FaviconsWebpackPlugin({logo: './app/images/headshot.jpg',
+			prefix: 'favicons/',
+			statsFilename: 'iconstats.json',
+		    title: 'Joel Balcaen',
+		})
+	]
 };

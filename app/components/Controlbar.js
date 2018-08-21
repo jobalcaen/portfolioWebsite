@@ -14,13 +14,11 @@ export default class Controlbar extends React.Component {
 	}
 
 	clickNavBar() {
-		console.log('clicked');
 		let newState = {...this.state, navBarsClicked: !this.state.navBarsClicked};
 		this.setState({...newState});
 	}
 
 	render() {
-		console.log('control props: ', this.props);
 
 		return (
 			<div className="controlbar">

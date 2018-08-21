@@ -3,9 +3,7 @@ import React from 'react';
 const Contact = () => {
 		return (
 			<div className='section-container'>
-				<h1>Contact</h1>
-
-				<p></p>
+			<header className='page-header'>Contact</header>
 
 			<dl className="contact-list">
 				<dt>E-mail</dt>

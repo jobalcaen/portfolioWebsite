@@ -21,7 +21,6 @@ export default class Main extends React.Component {
 	}
 
 	changePage(page) {
-		console.log("change page: ",  this.state);
 		let newState = {...this.state, selectedPage: page};
 		this.setState({...newState});
 	};
@@ -32,11 +31,7 @@ export default class Main extends React.Component {
 	}
 
 	toggleLanguage() {
-		console.log("englishView: ", this.state);
-
 		let newState = {...this.state, englishView: !this.state.englishView};
-		console.log("togglelanguage newState: ", newState);
-
 		this.setState({...newState});
 	}
 

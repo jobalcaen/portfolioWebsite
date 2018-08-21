@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const NavButtons = (props) => {
-	console.log('nav buttons clicked: ', props);
 	const buttons = props.pages.map((button) => {
 		let modifiedButton = button;
 		return (
