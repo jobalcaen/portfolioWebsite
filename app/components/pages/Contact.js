@@ -24,7 +24,7 @@ const Contact = () => {
 
 				<dt>Linkedin</dt>
 				<dd>
-					<a href="https://www.linkedin.com/in/joel-balcaen-9418b263/">
+					<a href="https://www.linkedin.com/in/joel-balcaen">
 						<i className="fa fa-linkedin" aria-hidden="true"></i>&nbsp;joel-balcaen
 					</a>
 				</dd>
