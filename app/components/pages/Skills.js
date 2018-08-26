@@ -19,9 +19,9 @@ export default class Skills extends React.Component {
 						<h2 className='workplace-name'>Voltage Technology</h2>
 						<span className='date-range'>...:: Nov 2016 – Jun 2017</span>
 					</div>
-					<h3>Frontend Web Developer</h3>
+					<h3>Frontend-Web Developer</h3>
 					<ul>
-						<li>Front end web development using React JS</li>
+						<li>Front-End web development using React JS</li>
 						<li>Deploy continuous integration system using Gitlab Continuous Integration</li>
 						<li>Automated functional testing using the Selenium Framework</li>
 					</ul>

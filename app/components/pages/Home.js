@@ -7,7 +7,7 @@ export default class Home extends React.Component {
 			<div className='section-container'>
 				<h1 className='greeting'>{this.props.englishView ? 'Hello, I\'m Joël' : 'Bonjour'}</h1>
 				<h2>
-					I am a web developer specialising in front end development.
+					I am a web developer specialising in front-end development.
 				</h2>
 
 				<p className="text">

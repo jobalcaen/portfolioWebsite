@@ -7,7 +7,7 @@ const Headshot = (props) => {
 		<div className='headshot' >
     		<img src={headshot} />
     		<div className='site-title'>
-    			<h1 className="controlbar-name">Joel Balcaen</h1>
+    			<h1 className="controlbar-name">Joël Balcaen</h1>
     			<h2 className="controlbar-header">Front-End Web Developer</h2>
 
 	    	</div>
