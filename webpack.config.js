@@ -48,5 +48,8 @@ module.exports = {
 			statsFilename: 'iconstats.json',
 		    title: 'Joel Balcaen',
 		})
-	]
+	],
+	devServer: {
+    	host: '0.0.0.0'
+	}
 };
