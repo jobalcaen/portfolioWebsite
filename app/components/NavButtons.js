@@ -9,7 +9,7 @@ const NavButtons = (props) => {
 				className='nav-button'
 				id={button}
 				key={button}
-				onClick={() => props.changePage(button)}
+				onClick={() => {props.changePage(button);props.toggleNav()}}
 				onMouseEnter={() => props.setHoveredButton(button)}
 				onMouseLeave={() => props.setHoveredButton(null)}
 			>
@@ -19,8 +19,17 @@ const NavButtons = (props) => {
 	});
 
 	return (
+
 		<div className={ props.navBarsClicked ? 'nav-container show' : 'nav-container'}>
-			{buttons}
+			<div className='nav-buttons'>
+				{buttons}
+			</div>
+
+			{
+				props.mobileView && <span className='nav-close-button' onClick={() => props.toggleNav() }>
+					<i class="fas fa-times"></i>
+				</span>	
+			}
 		</div>
 	)
 }

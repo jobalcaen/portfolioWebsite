@@ -37,6 +37,7 @@ export default class Controlbar extends React.Component {
 		    		changePage={this.props.changePage}
 		    		setHoveredButton={this.props.setHoveredButton}
 		    		navBarsClicked={this.state.navBarsClicked}
+		    		toggleNav={this.clickNavBar}
 				/>
 
 				<SocialButtons />

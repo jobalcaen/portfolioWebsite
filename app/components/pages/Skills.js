@@ -62,12 +62,6 @@ export default class Skills extends React.Component {
 					</span>
 
 					<span>
-						<object type="image/svg+xml" data={node_logo} className="logo">
-						</object>
-						Nodejs
-					</span>
-
-					<span>
 						<object type="image/svg+xml" data={git_logo} className="logo">
 						</object>
 						Git

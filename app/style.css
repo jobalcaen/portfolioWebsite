@@ -71,6 +71,13 @@ a {
 
 }
 
+.nav-buttons {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .logo {
 	height: 50px;
 	padding-bottom: 0.6em;
@@ -232,18 +239,16 @@ a {
     padding-right: 0.5em;
 }
 
+
+
 /*Smart Phones Portrait*/
 @media (max-width: 900px) {
+
 	.grid-container {
 		display: grid;
 		grid-template-rows: 20vh 80vh;
 		grid-template-columns: 100vw;
 	}
-}
-
-
-/*Smart Phones Portrait*/
-@media (max-width: 900px) {
 
 	.controlbar {
 		position: sticky;
@@ -275,29 +280,49 @@ a {
 	}
 
 	.nav-container {
-	    grid-column: 1/3;
-	    display: flex;
-	    flex-direction: row;
-	    align-items: center;
-	    justify-content: space-around;
-	    padding: 0;
-	    height: 9vh;
-	    left: 100%;
-	    width: 100%;
-	    position: fixed;
-	    margin-left: 0;
-	    overflow: hidden;
-	    text-align: center;
-		top: 20vh;
-	    -webkit-transition: all 0.3s ease-out;
-	    transition: all 0.3s ease-out;
-	    background-color: var(--control-bar-bg-color);
+
+    /* padding: 0; */
+    /* height: 9vh; */
+    /* left: 100%; */
+    /* width: 100%; */
+    /* position: fixed; */
+    /* margin-left: 0; */
+    /* overflow: hidden; */
+    /* text-align: center; */
+    /* top: 20vh; */
+    -webkit-transition: all 0.3s ease-out;
+    /* transition: all 0.3s ease-out; */
+    background-color: var(--control-bar-bg-color);
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    /* padding-top: 60px; */
+
 	}
 
+	.nav-buttons {
+		display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: space-around;
+	    height: 100%;
+	}
 
 	.show {
 	    left: 0;
 	    opacity: 1;
+	    width: 100%;
+	}
+
+	.nav-close-button {
+		position: relative;
+    	left: 40%;
+    	bottom: 90%;
+    	font-size: xx-large;
 	}
 
 	.mobile-menu-area {
