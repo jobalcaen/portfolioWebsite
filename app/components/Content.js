@@ -1,34 +1,34 @@
 import React from 'react';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Skills from './pages/Skills';
+import Home from '../pages/Home';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
+import Skills from '../pages/Skills';
 
 
-export default class Content extends React.Component {
-	componentToReturn(page) {
-		switch (page) {
+const Content = (props) => {
+	const componentToReturn = (props) => {
+		switch (props.selectedPage) {
 			case "home":
-				return <Home englishView={this.props.englishView}/>
+				return <Home englishView={props.englishView}/>
 			case "about":
-				return <About englishView={this.props.englishView} />
+				return <About englishView={props.englishView} />
 			case "contact":
-				return <Contact englishView={this.props.englishView} />
+				return <Contact englishView={props.englishView} />
 			case "skills":
-				return <Skills englishView={this.props.englishView} />
+				return <Skills englishView={props.englishView} />
 			default:
-				return <Home englishView={this.props.englishView} />
+				return <Home englishView={props.englishView} />
 		}
 	} 
-	render() {
-		return (
+	
+	return (
 
-			<div id="main" className="main-content">
+		<div id="main" className="main-content">
 
-				{this.componentToReturn(this.props.selectedPage)}
-			</div>
-		)
-	}
+			{componentToReturn(props)}
+		</div>
+	)
+	
 }
 
-
+export default Content;

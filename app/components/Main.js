@@ -10,12 +10,10 @@ export default class Main extends React.Component {
 		this.state = {
 			selectedPage: 'home',
 			pages: ['home','skills','contact'],
-			hoveredButton: null,
 			englishView: true,
-			mobileView: window.innerWidth >= 320 && window.innerWidth <= 480
+			mobileView: window.innerWidth <= 900
 		};
 		this.changePage = this.changePage.bind(this);
-		this.setHoveredButton = this.setHoveredButton.bind(this);
 		this.toggleLanguage = this.toggleLanguage.bind(this);
 		this.resize = this.resize.bind(this);
 	}
@@ -25,18 +23,13 @@ export default class Main extends React.Component {
 		this.setState({...newState});
 	};
 
-	setHoveredButton(button) {
-		let newState = {...this.state, hoveredButton: button};
-		this.setState({...newState});
-	}
-
 	toggleLanguage() {
 		let newState = {...this.state, englishView: !this.state.englishView};
 		this.setState({...newState});
 	}
 
 	resize() {
-		let newState = {...this.state, mobileView: window.innerWidth <= 600};
+		let newState = {...this.state, mobileView: window.innerWidth <= 900};
     	this.setState({...newState});
 	}
 
@@ -53,8 +46,6 @@ export default class Main extends React.Component {
 			<div className="grid-container">
 				<Controlbar
 					changePage={this.changePage}
-					setHoveredButton={this.setHoveredButton}
-					hoveredButton={this.state.hoveredButton}
 					selectedPage={this.state.selectedPage}
 					toggleLanguage={this.toggleLanguage}
 					pages={this.state.pages}
