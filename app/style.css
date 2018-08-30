@@ -64,6 +64,7 @@ a {
     text-align: center;
     color: var(--nav-item-color);
     font-size: 1em;
+    text-decoration: none;
 }
 
 .nav-button:hover {
