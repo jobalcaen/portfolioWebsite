@@ -3,29 +3,24 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Skills from '../pages/Skills';
+import NotFound from '../pages/NotFound';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 const Content = (props) => {
-	const componentToReturn = (props) => {
-		switch (props.selectedPage) {
-			case "home":
-				return <Home englishView={props.englishView}/>
-			case "about":
-				return <About englishView={props.englishView} />
-			case "contact":
-				return <Contact englishView={props.englishView} />
-			case "skills":
-				return <Skills englishView={props.englishView} />
-			default:
-				return <Home englishView={props.englishView} />
-		}
-	} 
-	
 	return (
 
 		<div id="main" className="main-content">
 
-			{componentToReturn(props)}
+			<BrowserRouter>
+				<Switch>
+					<Route path='/' component={Home} exact />
+					<Route path='/home' component={Home} exact />
+					<Route path='/contact' component={Contact} />
+					<Route path='/skills' component={Skills} />
+					<Route component={NotFound} />
+				</Switch>
+			</BrowserRouter>
 		</div>
 	)
 	

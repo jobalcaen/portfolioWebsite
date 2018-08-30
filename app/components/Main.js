@@ -54,9 +54,7 @@ export default class Main extends React.Component {
 				/>
 
 				<Content
-					selectedPage={this.state.selectedPage}
 					englishView={this.state.englishView}
-
 				/>
 			</div>
 		)

@@ -39,7 +39,9 @@ module.exports = {
 	},
 	output: {
 		filename: 'transformed.js',
-		path: __dirname + '/build'
+		path: __dirname + '/build',
+	    publicPath: '/'
+
 	},
 	plugins: [
 		HTMLWebpackPluginConfig,
@@ -50,6 +52,7 @@ module.exports = {
 		})
 	],
 	devServer: {
-    	host: '0.0.0.0'
+    	host: '0.0.0.0',
+   	    historyApiFallback: true
 	}
 };

@@ -1,19 +1,20 @@
 import React from 'react';
 import SocialButtons from './SocialButtons';
+import NavLink from 'react-router-dom';
 
 
 const NavButtons = (props) => {
 	const buttons = props.pages.map((button) => {
 		let modifiedButton = button;
 		return (
-			<span
-				className='nav-button'
-				id={button}
-				key={button}
-				onClick={() => {props.changePage(button);props.toggleNav()}}
-			>
-				{button === props.selectedPage ? '> '+button+' <' : button}		
-	    	</span>
+				<span
+					className='nav-button'
+					id={button}
+					key={button}
+					onClick={() => {props.changePage(button);props.toggleNav()}}
+				>
+					{button === props.selectedPage ? '> '+button+' <' : button}		
+		    	</span>
 	    )
 	});
 
@@ -26,7 +27,8 @@ const NavButtons = (props) => {
 				</span>	
 			}
 			<div className='nav-buttons'>
-				{buttons}
+
+					{buttons}
 				{ props.mobileView && <SocialButtons /> }
 			</div>
 
