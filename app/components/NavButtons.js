@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialButtons from './SocialButtons';
 
 
 const NavButtons = (props) => {
@@ -19,15 +20,18 @@ const NavButtons = (props) => {
 	return (
 
 		<div className={ props.navBarsClicked ? 'nav-container show' : 'nav-container'}>
-			<div className='nav-buttons'>
-				{buttons}
-			</div>
-
 			{
 				props.mobileView && <span className='nav-close-button' onClick={() => props.toggleNav() }>
 					<i className="fas fa-times"></i>
 				</span>	
 			}
+			<div className='nav-buttons'>
+				{buttons}
+				{ props.mobileView && <SocialButtons /> }
+			</div>
+
+			
+
 		</div>
 	)
 }

@@ -40,7 +40,7 @@ export default class Controlbar extends React.Component {
 		    		toggleNav={this.clickNavBar}
 				/>
 
-				<SocialButtons />
+				{!this.props.mobileView && <SocialButtons />}
 		
 
 		    </div>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const SocialButtons = () => {
 	return (
-	  	<div className='social-media-icons'>
+	  	<span className='social-media-icons'>
 			<a href="https://github.com/jobalcaen">
 				<i className="fa fa-github" aria-hidden="true"></i>
 			</a>
@@ -13,7 +13,7 @@ const SocialButtons = () => {
 			<a href="https://www.facebook.com/jobalcaen">
 				<i className="fa fa-facebook-official" aria-hidden="true"></i>
 			</a>
-		</div>
+		</span>
 	)
 }
 
