@@ -13,7 +13,7 @@ let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
 	entry: __dirname + '/app/index.js',
-	mode: 'development',
+	mode: 'production',
 	module: {
 		rules: [
 			{

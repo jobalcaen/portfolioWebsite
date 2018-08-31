@@ -11,13 +11,12 @@ const Content = (props) => {
 	return (
 
 		<div id="main" className="main-content">
-
 				<Switch>
 					<Route path='/' component={Home} exact />
-					<Route path='/home' component={Home} exact />
+					<Route path='/home' component={Home} />
 					<Route path='/contact' component={Contact} />
 					<Route path='/skills' component={Skills} />
-					<Route component={NotFound} />
+					<Route component={NotFound} exact/>
 				</Switch>
 		</div>
 	)
