@@ -7,7 +7,7 @@ import './style.css';
 const appRoot = document.getElementById('root');
 
 ReactDOM.render(
-	<BrowserRouter  basename={process.env.PUBLIC_URL}>
+	<BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
 		<Main />
 	</BrowserRouter>,
 	appRoot

@@ -7,16 +7,27 @@ import NotFound from '../pages/NotFound';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 
 
-const Content = (props) => {
+const Content = (routeProps) => {
+	const englishView = routeProps.englishView;
 	return (
 
 		<div id="main" className="main-content">
 				<Switch>
-					<Route path='/' component={Home} exact />
-					<Route path='/home' component={Home} />
-					<Route path='/contact' component={Contact} />
-					<Route path='/skills' component={Skills} />
-					<Route component={NotFound} exact/>
+					<Route exact path='/' render={(routeProps) => (
+						<Home {...routeProps} englishView={englishView}/>
+					)} />
+					<Route path='/home' render={(routeProps) => (
+						<Home {...routeProps} englishView={englishView}/>
+					)} />
+					<Route path='/contact' render={(routeProps) => (
+						<Contact {...routeProps} englishView={englishView}/>
+					)} />
+					<Route path='/skills' render={(routeProps) => (
+						<Skills {...routeProps} englishView={englishView}/>
+					)} />
+					<Route exact render={(routeProps) => (
+						<NotFound {...routeProps} englishView={englishView}/>
+					)} />
 				</Switch>
 		</div>
 	)

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Home = (props) => {
+	console.log("home props", props);
 	return (
 
 		<div className='section-container'>
