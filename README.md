@@ -1,8 +1,8 @@
-Source code for my personal website: 
+Source code for my personal website found here: 
 https://jobalcaen.github.io/
 
 Technologies used:
-- reactj
+- reactjs
 - react-router
 - webpack v4
 - babel
